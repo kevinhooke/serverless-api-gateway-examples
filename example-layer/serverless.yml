@@ -1,0 +1,13 @@
+service: example-layer
+
+provider:
+  name: aws
+  region: us-west-1
+
+layers:
+  example-layer:
+    path: src # required, path to layer contents on disk
+    description: Example layer
+    compatibleRuntimes: # optional, a list of runtimes this layer is compatible with
+      - nodejs14.x
+    retain: true

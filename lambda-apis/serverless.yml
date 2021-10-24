@@ -1,0 +1,16 @@
+service: example-apis1
+
+provider:
+  name: aws
+  memorySize: 512
+  region: us-west-1
+
+functions:
+  example1:
+    handler: index.handler
+    layers:
+      - arn:aws:lambda:us-west-1:730341620930:layer:example-layer:1
+    events:
+      - http:
+          path: example1
+          method: get

@@ -8,11 +8,19 @@ provider:
     restApiId: ${env:APIGWID} #  API Gateway to add this api to
     restApiRootResourceId: ${env:RESOURCEID}
 functions:
-  example1:
-    handler: index.handler
+  example2:
+    handler: index2.handler
     layers:
       - arn:aws:lambda:us-west-1:730341620930:layer:example-layer:1
     events:
       - http:
           path: api2
+          method: get
+  example3:
+    handler: index3.handler
+    layers:
+      - arn:aws:lambda:us-west-1:730341620930:layer:example-layer:1
+    events:
+      - http:
+          path: api3
           method: get
